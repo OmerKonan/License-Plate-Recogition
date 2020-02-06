@@ -33,7 +33,7 @@ def draw_contours(contours, boundRect, contours_poly, org_img):
         return org_img
 
 def main():
-    input_path = "/home/konan/Desktop/plate/img_plate"
+    input_path = "/home/konan/License-Plate-Recogition/img_plate"
     image_names = os.listdir(input_path)
     print(" Program started....","\n\n","Press any key for next image", "\n","Press q to quit")
 

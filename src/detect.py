@@ -57,11 +57,11 @@ class DetectorAPI:
         self.default_graph.close()
 
 if __name__ == "__main__":  
-    model_path = '/home/konan/Desktop/plate/inference_graph/frozen_inference_graph.pb'
-    saved_path = '/home/konan/Desktop/plate/img_plate/'
+    model_path = '/home/konan/License-Plate-Recogition/inference_graph/frozen_inference_graph.pb'
+    saved_path = '/home/konan/License-Plate-Recogition/img_plate/'
     odapi = DetectorAPI(path_to_ckpt=model_path)
     threshold = 0.7
-    input_path =    "/home/konan/Desktop/Plates/test/images"
+    input_path = '/home/konan/Desktop/Plates/test/images'
     image_names = os.listdir(input_path)
     print("Program started....")
     for image_name in image_names:
@@ -89,7 +89,7 @@ if __name__ == "__main__":
                 elif key & 0xFF == ord('q'):
                     break
                     
-
+##For video input
     """cap = cv2.VideoCapture('/path/to/input/video')
 
     while True:
@@ -104,6 +104,8 @@ if __name__ == "__main__":
             # Class 1 represents human
             if classes[i] == 1 and scores[i] > threshold:
                 box = boxes[i]
-                cv2.rectangle(img,(box[1],box[0]),(box[3],box[2]),(255,0,0),2)"""
-
+                cv2.rectangle(img,(box[1],box[0]),(box[3],box[2]),(255,0,0),2)
+                elif key & 0xFF == ord('q'):
+                    break"""
+                    
         
