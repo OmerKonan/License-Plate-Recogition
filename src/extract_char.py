@@ -33,14 +33,14 @@ def draw_contours(contours, boundRect, contours_poly, org_img):
         return org_img
 
 def main():
-    input_path = "/home/konan/License-Plate-Recogition/img_plate"
+    input_path = "/home/konan/License-Plate-Recognition/img_plate"
     image_names = os.listdir(input_path)
     print(" Program started....","\n\n","Press any key for next image", "\n","Press q to quit")
 
     for image_name in image_names:
         if image_name[-4:] == ".png" or image_name[-4:] == ".jpg":
             img = cv2.imread(input_path + "/" + image_name,0)
-            cv2.imshow("org", img)
+            cv2.imshow("orginal", img)
             threshed_img = cv2.adaptiveThreshold(img,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,\
                     cv2.THRESH_BINARY,55,5)
             drawn_img = extract_char(threshed_img,img)

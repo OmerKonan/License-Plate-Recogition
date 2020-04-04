@@ -57,15 +57,14 @@ class DetectorAPI:
         self.default_graph.close()
 
 if __name__ == "__main__":  
-    model_path = '/home/konan/License-Plate-Recogition/inference_graph/frozen_inference_graph.pb'
-    saved_path = '/home/konan/License-Plate-Recogition/img_plate/'
+    model_path = '/home/konan/License-Plate-Recognition/inference_graph/frozen_inference_graph.pb'
+    saved_path = '/home/konan/License-Plate-Recognition/img_plate/'
     odapi = DetectorAPI(path_to_ckpt=model_path)
     threshold = 0.7
-    input_path = '/home/konan/Desktop/Plates/test/images'
+    input_path = '/home/konan/License-Plate-Recognition/test_img'
     image_names = os.listdir(input_path)
     print("Program started....")
     for image_name in image_names:
-        print("Patf founede")
         if image_name[-4:] == ".png" or image_name[-4:] == ".jpg":
             img = cv2.imread(input_path + "/" + image_name)
             img = cv2.resize(img, (1280, 720))
@@ -75,22 +74,21 @@ if __name__ == "__main__":
                 # Class 1 represents human
                 if classes[i] == 1 and scores[i] > threshold:
                     box = boxes[i]
-                    print("box[0]",box[0],"\n",)
-                    print("box[1]",box[1],"\n",)
-                    print("box[2]",box[2],"\n",)
-                    print("box[3]",box[3],"\n",)
                     roi = img[box[0]:box[2],box[1]:box[3]]
                     #cv2.imwrite((saved_path + image_name), roi)
                     cv2.rectangle(img,(box[1],box[0]),(box[3],box[2]),(255,0,0),2)
                 cv2.imshow("preview", img)
-                key = cv2.waitKey(1)
-                if key & 0xFF == ord('n'):
-                    key = cv2.waitKey(0) 
-                elif key & 0xFF == ord('q'):
+                print("#---------------------------#")
+                print("Press q for next images")
+                key = cv2.waitKey(0)
+                if key & 0xFF == ord('q'):
                     break
                     
-##For video input
-    """cap = cv2.VideoCapture('/path/to/input/video')
+#############################
+#------For video input------#
+#############################
+    """
+    cap = cv2.VideoCapture('/path/to/input/video')
 
     while True:
         r, img = cap.read()
@@ -106,6 +104,5 @@ if __name__ == "__main__":
                 box = boxes[i]
                 cv2.rectangle(img,(box[1],box[0]),(box[3],box[2]),(255,0,0),2)
                 elif key & 0xFF == ord('q'):
-                    break"""
-                    
-        
+                    break
+    """
