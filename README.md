@@ -14,16 +14,16 @@ Python3 detect.py
 Python3 extract_char.py
 ```
 
-![test1](https://github.com/OmerKonan/License-Plate-Recognition/tree/master/detected_img/test1.png)
+![test1](./detected_img/test1.png)
 
 
-![test2](https://github.com/OmerKonan/License-Plate-Recognition/tree/master/detected_img/test2.png)
+![test2](./detected_img/test2.png)
 
 
-![test3](https://github.com/OmerKonan/License-Plate-Recognition/tree/master/detected_img/test3.png)
+![test3](./detected_img/test3.png)
 
 
-![test4](https://github.com/OmerKonan/License-Plate-Recognition/tree/master/detected_img/test4.png)
+![test4](./detected_img/test4.png)
 
 
-![test5](https://github.com/OmerKonan/License-Plate-Recognition/tree/master/detected_img/test5.png)
+![test5](./detected_img/test5.png)
